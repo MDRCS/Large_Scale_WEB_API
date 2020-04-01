@@ -40,7 +40,7 @@
 
 
 
-###Request Statuses
+### Request Statuses
 ##### - All possible statues of a Job’s life cycle :
 
 ```
