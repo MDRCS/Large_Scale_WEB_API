@@ -89,7 +89,7 @@ Operation   -   HTTP verb    -    URL: /users   -   URL: /users/U123
 
 ##### HOST api.brikol.com
 
-##### Authorization: Bearer eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ
+##### Authorization: Bearer <TOKEN>
 
 - PAYLOAD :
 
@@ -123,7 +123,7 @@ Operation   -   HTTP verb    -    URL: /jobs   -   URL: /jobs/U123   -   URL: /j
 
 ##### HOST api.brikol.com
 
-##### Authorization: Bearer eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ
+##### Authorization: Bearer <TOKEN>
 
 
 - PAYLOAD :
