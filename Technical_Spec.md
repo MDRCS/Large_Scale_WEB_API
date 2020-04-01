@@ -44,30 +44,29 @@
 ##### - All possible statues of a Job’s life cycle :
 
 ```
-            Status           -          Description
-|   ----------------------   |    ----------------------------   |
-             New                    The job just has been
-                                    created.
-|   ----------------------   |    ----------------------------   |
-           Accepted               The Job has been accepted by a
-                                  worker and is “en route”
-                                  to the mission location.
-|   ----------------------   |    ----------------------------   |
-           Arriving                 The worker has arrived
-|   ----------------------   |    ----------------------------   |
-         In Progress              The job is matching to the most
-                                  efficient available worker.
-|   ----------------------   |    ----------------------------   |
-        seeker_canceled            The job has been canceled
-                                   by the seeker.
-|   ----------------------   |    ----------------------------   |
-        worker_canceled            The job has been canceled
-                                   by the worker.
-|   ----------------------   |    ----------------------------   |
-          Completed                 The job has been completed
-                                    by the worker.
-|   ----------------------   |    ----------------------------   |
-
+            Status           -              Description
+|   ----------------------   |    --------------------------------   |
+             New                       The job just has been
+                                       created.
+|   ----------------------   |    --------------------------------   |
+           Accepted                  The Job has been accepted
+                                     by a worker and is “en route”
+                                     to the mission location.
+|   ----------------------   |    --------------------------------   |
+           Arriving                  The worker has arrived
+|   ----------------------   |    --------------------------------   |
+         In Progress               The job is matching to the most
+                                   efficient available worker.
+|   ----------------------   |    --------------------------------   |
+        seeker_canceled               The job has been canceled
+                                      by the seeker.
+|   ----------------------   |    --------------------------------   |
+        worker_canceled               The job has been canceled
+                                      by the worker.
+|   ----------------------   |    --------------------------------   |
+          Completed                   The job has been completed
+                                      by the worker.
+|   ----------------------   |    --------------------------------   |
 ```
 
 + Operations :
@@ -76,13 +75,13 @@
 ```
 Operation   -   HTTP verb    -    URL: /users   -   URL: /users/U123
 ----------- |  -----------   |    -----------   |     -----------     |
- Create            Post         Create New User      Not Applicable
+ Create            Post         Create New User     Not Applicable
 ----------- |  -----------   |    -----------   |     -----------     |
- Read              Get          Fetch All users      Fetch user U123
+ Read              Get          Fetch All users     Fetch user U123
 ----------- |  -----------   |    -----------   |     -----------     |
- Update        Patch or Put     Batch Update users   Update user U123
+ Update        Patch or Put     Batch Update users  Update user U123
 ----------- |  -----------   |    -----------   |     -----------     |
- Delete           Delete        Delete All Users     Delete user U123
+ Delete           Delete        Delete All Users    Delete user U123
 ----------- |  -----------   |    -----------   |     -----------     |
 ```
 ##### POST /v1/users
@@ -109,13 +108,13 @@ Operation   -   HTTP verb    -    URL: /users   -   URL: /users/U123
 ```
 Operation   -   HTTP verb    -    URL: /jobs   -   URL: /jobs/U123   -   URL: /jobs/status/{status}
 ----------- |  -----------   |    -----------   |     -----------    |    ----------------------    |
- Create            Post         Create New Job      Not Applicable              Not Applicable
+ Create            Post         Create New Job      Not Applicable            Not Applicable
 ----------- |  -----------   |    -----------   |     -----------    |    ----------------------    |
- Read              Get          Fetch All Jobs      Fetch Job U123          Fetch All Jobs by status
+ Read              Get          Fetch All Jobs      Fetch Job U123        Fetch All Jobs by status
 ----------- |  -----------   |    -----------   |     -----------    |    ----------------------    |
- Update        Patch or Put     Batch Update Jobs   Update Job U123             Not Applicable
+ Update        Patch or Put     Batch Update Jobs   Update Job U123           Not Applicable
 ----------- |  -----------   |    -----------   |     -----------    |    ----------------------    |
- Delete           Delete        Delete All Jobs     Delete Job U123             Not Applicable
+ Delete           Delete        Delete All Jobs     Delete Job U123           Not Applicable
 ----------- |  -----------   |    -----------   |     -----------    |    ----------------------    |
 ```
 
@@ -140,11 +139,12 @@ Operation   -   HTTP verb    -    URL: /jobs   -   URL: /jobs/U123   -   URL: /j
 + HTTP Code status - Errors:
 
 ```
--          Status code         -          Description         -     Error Response Body
-|    ----------------------    |    ----------------------    |    ----------------------   |
+-          Status code         -          Description         -           Error Response Body
+|    ----------------------    |    ----------------------    |    --------------------------------------------  |
             200 OK                   The request Succeeded          {
                                                                         "id": "R234",
-                                                                        "description": " I want a Gas Bottle please, here is my location.",
+                                                                        "description": " I want a Gas Bottle please,
+                                                                                         here is my location.",
                                                                         "worker_id": "U123",
                                                                         "seeker_id": "U678",
                                                                         "latitude": "-1.32637",
@@ -153,10 +153,11 @@ Operation   -   HTTP verb    -    URL: /jobs   -   URL: /jobs/U123   -   URL: /j
                                                                         "status": "New",
                                                                         "created_at": "12/03/20"
                                                                       }
-|    ----------------------    |    ----------------------    |    ----------------------   |
+|    ----------------------    |    ----------------------    |    --------------------------------------------  |
           201 Created                The request Succeeded,          {
                                      And new Job was Created            "id": "R234",
-                                                                        "description": " I want a Gas Bottle please, here is my location.",
+                                                                        "description": " I want a Gas Bottle please,
+                                                                                         here is my location.",
                                                                         "worker_id": "U123",
                                                                         "seeker_id": "U678",
                                                                         "latitude": "-1.32637",
@@ -165,9 +166,10 @@ Operation   -   HTTP verb    -    URL: /jobs   -   URL: /jobs/U123   -   URL: /j
                                                                         "status": "In Progress",
                                                                         "created_at": "12/03/20"
                                                                       }
-|    ----------------------    |    ----------------------    |    ----------------------   |
+|    ----------------------    |    ----------------------    |    --------------------------------------------  |
           202 Accepted                The Job was Updated               "id": "R234",
-                                      Successfully.                     "description": " I want a Gas Bottle please, here is my location.",
+                                      Successfully.                     "description": " I want a Gas Bottle please,
+                                                                                         here is my location.",
                                                                         "worker_id": "U123",
                                                                         "seeker_id": "U678",
                                                                         "latitude": "-1.32637",
@@ -175,43 +177,43 @@ Operation   -   HTTP verb    -    URL: /jobs   -   URL: /jobs/U123   -   URL: /j
                                                                         "price": 10,  # USD
                                                                         "status": "Completed",
                                                                       }
-|    ----------------------    |    ----------------------    |    ----------------------   |
+|    ----------------------    |    ----------------------    |    --------------------------------------------  |
          400 bad request             The request cannot be,       {
                                      accepted, often because         "error": "missing_parameter",
                                      of a missing parameters         "message": "The following parameters
                                                                                  are missing from your request
                                                                                  <parameter1>, <parameter2>",
                                                                     }
-|    ----------------------    |    ----------------------    |    ----------------------   |
+|    ----------------------    |    ----------------------    |    --------------------------------------------  |
          401 Unauthorized            No Valid access token        {
                                      was provided.                  "error": "unauthorized",
                                                                     "message": "The privided token
                                                                                 is not valid",
                                                                     }
-|    ----------------------    |    ----------------------    |    ----------------------   |
+|    ----------------------    |    ----------------------    |    --------------------------------------------  |
          403 Forbidden              The user may not have         {
                                     the permission to do            "error": "forbidden",
                                     this action.                    "message": "You don't have
                                                                                the permission to do
                                                                                this Action.",
                                                                     }
-|    ----------------------    |    ----------------------    |    ----------------------   |
+|    ----------------------    |    ----------------------    |    --------------------------------------------  |
          404 Not Found              The requested job              {
                                     was not found.                      "error": "not_found ",
                                                                         "message": "The requested job
                                                                                     was not found.",
                                                                     }
-|    ----------------------    |    ----------------------    |    ----------------------   |
+|    ----------------------    |    ----------------------    |    --------------------------------------------  |
       429 Too Many requests         Too many requests were          {
                                     sent in given amount               "error": "too_many_requests",
                                     of time.                           "message": " you have made
                                                                        Too many requests in a given
                                                                        amount of time, Try in <Time> minutes",
                                                                     }
-|    ----------------------    |    ----------------------    |    ----------------------   |
+|    ----------------------    |    ----------------------    |    --------------------------------------------  |
         500 Server Error             Someting Went wrong
                                      in the server side.
-|    ----------------------    |    ----------------------    |    ----------------------   |
+|    ----------------------    |    ----------------------    |    --------------------------------------------  |
 
 ```
 
