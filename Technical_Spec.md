@@ -89,7 +89,7 @@ Operation   -   HTTP verb    -    URL: /users   -   URL: /users/U123
 
 ##### HOST api.brikol.com
 
-##### Authorization: Bearer <TOKEN>
+##### Authorization: Bearer [$TOKEN]()
 
 - PAYLOAD :
 
@@ -123,7 +123,7 @@ Operation   -   HTTP verb    -    URL: /jobs   -   URL: /jobs/U123   -   URL: /j
 
 ##### HOST api.brikol.com
 
-##### Authorization: Bearer <TOKEN>
+##### Authorization: Bearer [$TOKEN]()
 
 
 - PAYLOAD :
@@ -215,7 +215,7 @@ Operation   -   HTTP verb    -    URL: /jobs   -   URL: /jobs/U123   -   URL: /j
 
 ```
 
-###- Best Practices for a safe scaling :
+### - Best Practices for a safe scaling :
 
 + Scaling throughput
 + Evolving API design (End-point)
