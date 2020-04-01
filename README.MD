@@ -1,5 +1,4 @@
 
-
 ### Large Scale Web API - Project :
 
 Presentation - Project :
@@ -27,7 +26,7 @@ Mean Features :
 + Database Support -> Postgres
 + Database Migration -> Alembic
 + Payment Processing -> Stripe
-+ Third-Party OAuth -> Linkedin, Github, Facebook
++ Third-Party OAuth -> Facebook, Instagram
 + Registration & Forget The Password -> Mailgun
 + Caching -> Redis (In-Memory Key/Value Store)
 + Database Sharding
