@@ -44,3 +44,4 @@ Mean Features :
 + 18n internationalization ->
 + Automation Testing -> Selenium WebDriver
 + Commandline -> Flask CLI
++ Response Compression -> GZIP

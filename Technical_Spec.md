@@ -4,7 +4,7 @@
 
 ### Proposal: Brikol API Spec
 
-#### Authors : Mohamed El Rahali
+#### Author : Mohamed El Rahali
 
 
 + Database Schema :
@@ -38,7 +38,37 @@
                 status: String(10)
                 created_at: Date()
 
-         - status : New | In Progress | Completed
+
+
+###Request Statuses
+##### - All possible statues of a Job’s life cycle :
+
+```
+            Status           -          Description
+|   ----------------------   |    ----------------------------   |
+             New                    The job just has been
+                                    created.
+|   ----------------------   |    ----------------------------   |
+           Accepted               The Job has been accepted by a
+                                  worker and is “en route”
+                                  to the mission location.
+|   ----------------------   |    ----------------------------   |
+           Arriving                 The worker has arrived
+|   ----------------------   |    ----------------------------   |
+         In Progress              The job is matching to the most
+                                  efficient available worker.
+|   ----------------------   |    ----------------------------   |
+        seeker_canceled            The job has been canceled
+                                   by the seeker.
+|   ----------------------   |    ----------------------------   |
+        worker_canceled            The job has been canceled
+                                   by the worker.
+|   ----------------------   |    ----------------------------   |
+          Completed                 The job has been completed
+                                    by the worker.
+|   ----------------------   |    ----------------------------   |
+
+```
 
 + Operations :
    * User - CRUD Ops
@@ -191,3 +221,4 @@ Operation   -   HTTP verb    -    URL: /jobs   -   URL: /jobs/U123   -   URL: /j
 + Evolving API design (End-point)
 + Paginating APIs (Limits, Cursor {type: Timestamp})
 + Rate-limiting APIs (user token) Token bucket -> traffic bursts support
+
