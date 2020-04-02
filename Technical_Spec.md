@@ -2,7 +2,7 @@
 
 ## Project Specification :
 
-### Proposal: Brikol API Spec
+### Proposal: Brikol API v1 Spec
 
 #### Author : Mohamed El Rahali
 
