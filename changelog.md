@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [1.0.0] - 2020-04-01
+## [1.0.0-Beta] - 2020-04-01
 ### Added
 - New visual identity by [@tylerfortune8](https://github.com/tylerfortune8).
 - Version navigation.
