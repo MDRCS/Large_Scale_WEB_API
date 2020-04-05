@@ -224,5 +224,5 @@ Operation   -   HTTP verb    -    URL: /jobs   -   URL: /jobs/U123   -   URL: /j
 + Paginating APIs (Limits, Cursor {type: Timestamp})
 + Rate-limiting APIs (user token) Token bucket -> traffic bursts support
 
-##### - [Swagger](https://petstore.swagger.io/v2/swagger.json) API for Documenting Your API.
+##### - [Swagger](https://petstore.swagger.io/v2/swagger.json) Tool for API Reference Documentation.
 
